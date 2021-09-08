@@ -1449,9 +1449,9 @@
 	 */
 	Owl.prototype.on = function(element, event, listener, capture) {
 		if (element.addEventListener) {
-			element.addEventListener(event, listener, capture);
+			element.addEventListener(event, listener, capture, {passive: true});
 		} else if (element.attachEvent) {
-			element.attachEvent('on' + event, listener);
+			element.attachEvent('on' + event, listener, {passive: true});
 		}
 	};
 
